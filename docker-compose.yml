@@ -1,0 +1,12 @@
+version: '3'
+services:
+  server1.test:
+    image: diceansible
+    hostname: server1.test
+    ports:
+    - "2224:22"
+  server2.test:
+    image: diceansible
+    hostname: server2.test
+    ports:
+    - "2225:22"
