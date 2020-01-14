@@ -1,0 +1,17 @@
+# WordPress database settings
+wp_db_name: wordpress
+wp_db_user: wordpress
+wp_db_password: wordpress_db_password
+
+mysql_port: 3306
+mysql_root_password: root
+
+auto_up_disable: true
+
+server_hostname: 172.23.0.2
+
+# WordPress Version
+wp_version: 4.7.5
+wp_sha1sum: fbe0ee1d9010265be200fe50b86f341587187302
+
+core_update_level: true
