@@ -1,0 +1,31 @@
+---
+# tasks file for php
+
+- name: Install php extensions
+  apt:
+    name: "{{ item }}"
+    state: present
+  # become: yes
+  with_items:
+    - php
+    - php-mysql
+    - php-gd
+    - php-ssh2
+    - php-fpm
+
+- name: Setup php-fpm
+  replace: dest=/etc/php/7.2/fpm/php.ini regexp="(;cgi.fix_pathinfo=1)" replace="cgi.fix_pathinfo=0"
+  notify:
+    - restart nginx
+  # become: yes
+- name: start php-fpm
+  command: service php7.2-fpm start 
+  #service: name=php7.2-fpm state=started
+  
+
+
+- name: Add php settings
+  template: src=../../nginx/templates/nginx-wp-common.conf dest=/etc/nginx/nginx-wp-common.conf owner=www-data group=www-data mode=0644
+  notify:
+    - restart nginx
+  # become: yes
