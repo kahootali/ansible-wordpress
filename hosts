@@ -1,0 +1,4 @@
+[webservers]
+server1.test
+[others]
+server2.test
