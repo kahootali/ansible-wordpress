@@ -14,13 +14,13 @@
     - php-fpm
 
 - name: Setup php-fpm
-  replace: dest=/etc/php/7.2/fpm/php.ini regexp="(;cgi.fix_pathinfo=1)" replace="cgi.fix_pathinfo=0"
+  replace: dest=/etc/php/7.4/fpm/php.ini regexp="(;cgi.fix_pathinfo=1)" replace="cgi.fix_pathinfo=0"
   notify:
     - restart nginx
   # become: yes
 - name: start php-fpm
-  command: service php7.2-fpm start 
-  #service: name=php7.2-fpm state=started
+  command: service php7.4-fpm start 
+  #service: name=php7.4-fpm state=started
   
 
 

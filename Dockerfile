@@ -4,15 +4,15 @@ RUN apt-get update && \
     apt-get clean all
 RUN apt-get update && apt-get install -y \
     build-essential \
-    python \
-    python-dev \
+    python3 \
+    python3-dev \
     libxml2-dev \
     libxslt-dev \
     libssl-dev \
     zlib1g-dev \
     libyaml-dev \
     libffi-dev \
-    python-pip
+    python3-pip
 # Latest versions of python tools via pip
 RUN pip install --upgrade pip \
     virtualenv \
